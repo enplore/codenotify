@@ -62,7 +62,7 @@ func testableMain(stdout io.Writer, args []string) error {
 		return fmt.Errorf("error scanning lines from diff: %s\n%s", err, string(diff))
 	}
 
-	notifs, err := notifications(&gitfs{cwd: opts.cwd, rev: opts.baseRef}, paths, opts.filename)
+	notifs, err := notifications(&gitfs{cwd: opts.cwd, rev: opts.headRef}, paths, opts.filename)
 	if err != nil {
 		return err
 	}
